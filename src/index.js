@@ -1,14 +1,20 @@
 import _ from 'lodash';
 import myName from './myName';
+import printMe from './print';
 
 function component() {
     const element = document.createElement('div');
+    const button = document.createElement('button');
 
-    // lodash now imported by this script
-    // element.innerHTML = _.join(['Hello', 'Webpack'], '');
+    element.innerHTML = _.join(['Hello', 'Webpack'], '');
 
     // using the myName function import
-    element.textContent = myName('Cody');
+    // element.textContent = myName('Cody');
+
+    button.innerHTML = 'Click me and check the console';
+    button.onclick = printMe;
+
+    element.appendChild(button);
 
     return element;
 }
